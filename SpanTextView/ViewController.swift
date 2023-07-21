@@ -13,23 +13,43 @@ class ViewController: UIViewController {
         view.backgroundColor = UIColor(red: CGFloat.random(in: 0.0..<1.0), green: CGFloat.random(in: 0.0..<1.0), blue: CGFloat.random(in: 0.0..<1.0), alpha: 1.0);
     }
 
+    @objc func actionSpanToWhite(_ sender: UITapGestureRecognizer) {
+        view.backgroundColor = .white;
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print("ViewController: viewDidLoad()");
         
         let s = 15.0;
-        
         let scale = view.frame.height / view.frame.width;
-        
         print("ViewController: scale:",scale, UIScreen.main.scale, view.frame.size)
         
-        let textView = UITextView(frame: CGRect(origin: CGPoint(x: 50, y: 50), size: CGSize(width: view.frame.width, height: s*scale)));
+        let textView = SpanTextView(frame: CGRect(origin: CGPoint(x: 50, y: 50), size: CGSize(width: view.frame.width, height: s*scale)));
         
         textView.font = UIFont.systemFont(ofSize: s);
+        textView.text = "Sample span text for demonstration";
+        
+        textView.addSpan(from: 0,
+                         to: 15,
+                         action: #selector(actionSpan(_:)),
+                         target: self,
+                         attrs: [NSAttributedString.Key.font:            UIFont.systemFont(ofSize: s),
+                                 NSAttributedString.Key.foregroundColor: UIColor.red.cgColor,
+                                 NSAttributedString.Key.underlineStyle:  NSUnderlineStyle.thick.rawValue,
+                                 NSAttributedString.Key.underlineColor: UIColor.green]);
+        
+        textView.addSpan(from: 15,
+                         to: textView.text.count,
+                         action: #selector(actionSpanToWhite(_:)),
+                         target: self,
+                         attrs: [NSAttributedString.Key.font:            UIFont.systemFont(ofSize: s),
+                                 NSAttributedString.Key.foregroundColor: UIColor.blue.cgColor]);
+        
         
         view.addSubview(textView);
-        
+        /*
         let to = 0;
         let from = 7;
         let txt = "Simple text with subview";
@@ -41,11 +61,6 @@ class ViewController: UIViewController {
         let range = textView.textRange(from: pos2!, to: pos1!);
         
         var resultPos = textView.firstRect(for: range!);
-        
-        let pTextView = textView.frame.origin;
-        let pResult = resultPos.origin;
-        
-        //resultPos.origin = CGPoint(x: pResult.x+pTextView.x, y: pResult.y+pTextView.y);
         
         print("ViewController: POSITION:", resultPos);
         
@@ -65,7 +80,7 @@ class ViewController: UIViewController {
         
         button.addTarget(self, action: #selector(actionSpan(_:)), for: .touchUpInside);
         
-        textView.addSubview(button);
+        textView.addSubview(button);*/
         
     }
 }

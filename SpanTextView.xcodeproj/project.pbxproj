@@ -16,6 +16,8 @@
 		25D5E5452A6A66F400A3126B /* SpanTextViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D5E5442A6A66F400A3126B /* SpanTextViewTests.swift */; };
 		25D5E54F2A6A66F400A3126B /* SpanTextViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D5E54E2A6A66F400A3126B /* SpanTextViewUITests.swift */; };
 		25D5E5512A6A66F400A3126B /* SpanTextViewUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D5E5502A6A66F400A3126B /* SpanTextViewUITestsLaunchTests.swift */; };
+		25D5E55F2A6A6CE000A3126B /* SpanTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D5E55E2A6A6CE000A3126B /* SpanTextView.swift */; };
+		25D5E5622A6A6D7D00A3126B /* Span.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D5E5612A6A6D7D00A3126B /* Span.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		25D5E54A2A6A66F400A3126B /* SpanTextViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpanTextViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		25D5E54E2A6A66F400A3126B /* SpanTextViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpanTextViewUITests.swift; sourceTree = "<group>"; };
 		25D5E5502A6A66F400A3126B /* SpanTextViewUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpanTextViewUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		25D5E55E2A6A6CE000A3126B /* SpanTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpanTextView.swift; sourceTree = "<group>"; };
+		25D5E5612A6A6D7D00A3126B /* Span.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Span.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 		25D5E52C2A6A66F200A3126B /* SpanTextView */ = {
 			isa = PBXGroup;
 			children = (
+				25D5E5602A6A6D6700A3126B /* models */,
+				25D5E55D2A6A6CC400A3126B /* views */,
 				25D5E52D2A6A66F200A3126B /* AppDelegate.swift */,
 				25D5E52F2A6A66F200A3126B /* SceneDelegate.swift */,
 				25D5E5312A6A66F200A3126B /* ViewController.swift */,
@@ -125,6 +131,22 @@
 				25D5E5502A6A66F400A3126B /* SpanTextViewUITestsLaunchTests.swift */,
 			);
 			path = SpanTextViewUITests;
+			sourceTree = "<group>";
+		};
+		25D5E55D2A6A6CC400A3126B /* views */ = {
+			isa = PBXGroup;
+			children = (
+				25D5E55E2A6A6CE000A3126B /* SpanTextView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		25D5E5602A6A6D6700A3126B /* models */ = {
+			isa = PBXGroup;
+			children = (
+				25D5E5612A6A6D7D00A3126B /* Span.swift */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +283,8 @@
 				25D5E5322A6A66F200A3126B /* ViewController.swift in Sources */,
 				25D5E52E2A6A66F200A3126B /* AppDelegate.swift in Sources */,
 				25D5E5302A6A66F200A3126B /* SceneDelegate.swift in Sources */,
+				25D5E5622A6A6D7D00A3126B /* Span.swift in Sources */,
+				25D5E55F2A6A6CE000A3126B /* SpanTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
